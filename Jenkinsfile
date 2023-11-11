@@ -1,6 +1,4 @@
 pipeline {
-	agent any
-	
 	stages {
 	    stage('Checkout') {
 	        steps {
@@ -8,12 +6,10 @@ pipeline {
 		      }}
 		stage('Build') {
 	           steps {
-			  sh '/home/jerry/apache-maven-3.9.5/bin/mvn install'
+			  sh '/home/tom/slave-dir/apache-maven-3.9.5/bin/mvn install'
 	                 }}
 		stage('Deployment'){
 		    steps {
-			
-			sh 'cp target/poco.war /home/jerry/apache-tomcat-9.0.82/webapps'
-			}}
-			}}
-		
+			sh 'cp target/Oneplus.war /home/tom/slave-dir/apache-tomcat-9.0.82/webapps'
+			}}	
+}}
